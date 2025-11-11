@@ -24,6 +24,7 @@ public class UsuarioService {
     }
 
     public String loginUsuario(LoginRequestDTO dto) {
+
         return client.login(dto);
     }
 
@@ -32,6 +33,7 @@ public class UsuarioService {
     }
 
     public void deletaUsuarioPorEmail(String email, String token) {
+
         client.deleteUsuarioPorEmail(email, token);
     }
 
@@ -52,7 +54,7 @@ public class UsuarioService {
     }
 
     public TelefoneDTOResponse cadastraTelefone(String token, TelefoneDTORequest dto) {
-       return client.cadastraTelefone(dto, token);
+        return client.cadastraTelefone(dto, token);
     }
 
 }

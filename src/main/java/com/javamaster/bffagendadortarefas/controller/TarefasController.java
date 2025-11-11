@@ -43,7 +43,7 @@ public class TarefasController {
             @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime dataInicial,
             @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime dataFinal,
             @RequestHeader(name = "Authorization", required = false) String token) {
-        return ResponseEntity.ok(tarefasService.bascaTarefasAgendadasPorPeriodo(dataInicial, dataFinal, token));
+        return ResponseEntity.ok(tarefasService.buscaTarefasAgendadasPorPeriodo(dataInicial, dataFinal, token));
     }
 
     @GetMapping
@@ -52,9 +52,8 @@ public class TarefasController {
     @ApiResponse(responseCode = "200", description = "Tarefas encontradas")
     @ApiResponse(responseCode = "500", description = "Erro de servidor")
     public ResponseEntity<List<TarefasDTOResponse>> buscarTarefasPorEmail(@RequestHeader(name = "Authorization", required = false) String token) {
-
-        return ResponseEntity.ok(tarefasService.buscaTarefasPorEmail(token));
-
+        List<TarefasDTOResponse> tarefas = tarefasService.buscaTarefasPorEmail(token);
+        return ResponseEntity.ok(tarefas);
     }
 
     @DeleteMapping

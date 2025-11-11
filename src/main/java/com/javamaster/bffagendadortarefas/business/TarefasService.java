@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 @Service
@@ -21,18 +22,20 @@ public class TarefasService {
             return tarefasClient.gravarTarefas(dto,token);
 }
 
-public List<TarefasDTOResponse> bascaTarefasAgendadasPorPeriodo(LocalDateTime dataInicial,
-                                                                LocalDateTime dataFinal,
-                                                                String token) {
-    return tarefasClient.buscaListaDeTarefasPorPeriodo(dataInicial, dataFinal, token);
-}
+    public List<TarefasDTOResponse> buscaTarefasAgendadasPorPeriodo(LocalDateTime dataInicial,
+                                                                    LocalDateTime dataFinal,
+                                                                    String token) {
+
+        return tarefasClient.buscaListaDeTarefasPorPeriodo(dataInicial, dataFinal, token);
+    }
 
 public List<TarefasDTOResponse> buscaTarefasPorEmail(String token) {
     return tarefasClient.buscarTarefasPorEmail(token);
 }
 
 public void deletaTarefaPorId(String id, String token) {
-    tarefasClient.deletaTarefaPorId(id, token);
+
+        tarefasClient.deletaTarefaPorId(id, token);
 }
 
 public TarefasDTOResponse alteraStatus(StatusNotificacaoEnum status, String id, String token) {

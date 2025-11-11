@@ -16,7 +16,7 @@ public interface UsuarioClient {
 
     @GetMapping
     UsuarioDTOResponse buscaUsuarioPorEmail(@RequestParam("email") String email,
-                                            @RequestHeader("Authorization")String token);
+                                            @RequestHeader(value = "Authorization", required=false)String token);
 
     @PostMapping
     UsuarioDTOResponse salvaUsuario(@RequestBody UsuarioDTORequest usuarioDTO);
@@ -27,29 +27,29 @@ public interface UsuarioClient {
 
     @DeleteMapping("/{email}")
     void deleteUsuarioPorEmail(@PathVariable String email,
-                               @RequestHeader("Authorization")String token);
+                               @RequestHeader(value = "Authorization", required=false)String token);
 
     @PutMapping
     UsuarioDTOResponse atualizaDadoUsuario(@RequestBody UsuarioDTORequest dto,
-                                           @RequestHeader("Authorization")String token);
+                                           @RequestHeader(value = "Authorization", required=false)String token);
 
     @PutMapping("/endereco")
     EnderecoDTOResponse atualizaEndereco(@RequestBody EnderecoDTORequest dto,
                                          @RequestParam("id") Long id,
-                                         @RequestHeader("Authorization")String token);
+                                         @RequestHeader(value = "Authorization", required=false)String token);
 
     @PutMapping("/telefone")
     TelefoneDTOResponse atualizaTelefone(@RequestBody TelefoneDTORequest dto,
                                          @RequestParam("id") Long id,
-                                         @RequestHeader("Authorization")String token);
+                                         @RequestHeader(value = "Authorization", required=false)String token);
 
     @PostMapping("/endereco")
     EnderecoDTOResponse cadastraEndereco(@RequestBody EnderecoDTORequest dto,
-                                         @RequestHeader("Authorization")String token);
+                                         @RequestHeader(value = "Authorization", required=false)String token);
 
     @PostMapping("/telefone")
     TelefoneDTOResponse cadastraTelefone(@RequestBody TelefoneDTORequest dto,
-                                         @RequestHeader("Authorization")String token);
+                                         @RequestHeader(value = "Authorization", required=false)String token);
 
 
 }
