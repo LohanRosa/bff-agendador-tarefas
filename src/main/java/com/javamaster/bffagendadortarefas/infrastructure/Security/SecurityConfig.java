@@ -8,5 +8,4 @@ import io.swagger.v3.oas.annotations.security.SecurityScheme;
 public class SecurityConfig {
 
     public static final String SECURITY_SCHEME = "bearerAuth";
-
 }

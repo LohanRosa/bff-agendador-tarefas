@@ -30,7 +30,7 @@ public class TarefasService {
     }
 
 public List<TarefasDTOResponse> buscaTarefasPorEmail(String token) {
-    return tarefasClient.buscarTarefasPorEmail(token);
+    return tarefasClient.buscaTarefasPorEmail(token);
 }
 
 public void deletaTarefaPorId(String id, String token) {
