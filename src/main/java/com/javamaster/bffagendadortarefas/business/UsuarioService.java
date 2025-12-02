@@ -7,6 +7,7 @@ import com.javamaster.bffagendadortarefas.business.dto.in.UsuarioDTORequest;
 import com.javamaster.bffagendadortarefas.business.dto.out.EnderecoDTOResponse;
 import com.javamaster.bffagendadortarefas.business.dto.out.TelefoneDTOResponse;
 import com.javamaster.bffagendadortarefas.business.dto.out.UsuarioDTOResponse;
+import com.javamaster.bffagendadortarefas.business.dto.out.ViaCepDTOResponse;
 import com.javamaster.bffagendadortarefas.infrastructure.client.UsuarioClient;
 
 import lombok.RequiredArgsConstructor;
@@ -64,5 +65,10 @@ public class UsuarioService {
 
         return client.cadastraTelefone(dto, token);
     }
+
+    public ViaCepDTOResponse buscarEnderecoPorCep(String cep){
+        return client.buscarDadosCep(cep);
+    }
+
 
 }
