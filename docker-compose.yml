@@ -28,7 +28,7 @@ services:
     ports:
       - "8081:8081"
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5433/db_usuario
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/db_usuario
       - SPRING_DATASOURCE_USERNAME=admin
       - SPRING_DATASOURCE_PASSWORD=admin
     depends_on:
@@ -49,7 +49,7 @@ services:
       POSTGRES_PASSWORD: admin
       POSTGRES_DB: db_usuario
     ports:
-      - "5433:5433"
+      - "5433:5432"
 
   mongo:
     image: mongo:latest
