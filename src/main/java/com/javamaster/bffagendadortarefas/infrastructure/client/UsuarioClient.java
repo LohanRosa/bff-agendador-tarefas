@@ -8,6 +8,7 @@ import com.javamaster.bffagendadortarefas.business.dto.in.UsuarioDTORequest;
 import com.javamaster.bffagendadortarefas.business.dto.out.EnderecoDTOResponse;
 import com.javamaster.bffagendadortarefas.business.dto.out.TelefoneDTOResponse;
 import com.javamaster.bffagendadortarefas.business.dto.out.UsuarioDTOResponse;
+import com.javamaster.bffagendadortarefas.business.dto.out.ViaCepDTOResponse;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
@@ -56,8 +57,8 @@ public interface UsuarioClient {
     TelefoneDTOResponse cadastraTelefone(@RequestBody TelefoneDTORequest dto,
                                          @RequestHeader(value = "Authorization", required=false) String token);
 
-   /* @GetMapping("/endereco/{cep}")
-    ViaCepDTOResponse buscarDadosCep(@PathVariable("cep") String cep);*/
+    @GetMapping("/endereco/{cep}")
+    ViaCepDTOResponse buscarDadosCep(@PathVariable("cep") String cep);
 
 
 

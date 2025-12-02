@@ -1,6 +1,5 @@
 package com.javamaster.bffagendadortarefas.controller;
 
-import com.javamaster.bffagendadortarefas.infrastructure.exceptions.BusinessException;
 import com.javamaster.bffagendadortarefas.infrastructure.exceptions.ConflictException;
 import com.javamaster.bffagendadortarefas.infrastructure.exceptions.ResourceNotFoundException;
 import com.javamaster.bffagendadortarefas.infrastructure.exceptions.UnauthorizedException;
